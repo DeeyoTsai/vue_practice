@@ -44,7 +44,7 @@ export default {
 <main class="mx-6 sm:mx-16">
   <h1 class="my-6 text-4xl font-extrabold"> {{ title }} 設備管理系統 </h1>
   <form>
-    <label for="">設備名稱</label><br>
+    <label class="p-2 text-white bg-black">設備名稱</label><br>
     <div class="flex gap-2 items-center">
       <input
             type="text"
