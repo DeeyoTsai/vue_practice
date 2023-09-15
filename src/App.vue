@@ -1,47 +1,45 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+
+export default {
+  data: function() {
+    return {
+      title:'AUO',
+      device:'',
+      devices:[],
+    };
+  },
+  methods:{
+    addDevice() {
+      if (this.device !== ""){
+        this.devices.unshift(this.device);
+        // console.log(this.device);
+        this.device = "";
+      };
+    },
+  },
+};
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+<h1> {{ title }} 設備管理系統 </h1>
+<form>
+  <label for="">設備名稱</label><br>
+  <input type="text" v-model="device">
+  <button>新增</button>
+</form>
+<section>
+  <h3 v-if="devices.length == 0">目前無任何設備</h3>
+  <h3 v-else>目前共計{{ devices.length }}項設備</h3>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+</section>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+label {
+  background-color: black;
+  color: white;
+  padding: 4px 8px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
