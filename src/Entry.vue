@@ -20,3 +20,9 @@ import { RouterView, RouterLink } from "vue-router";
     </main>
     
 </template>
+
+<style>
+.h1 {
+    @apply my-6 text-4xl font-extrabold;
+}
+</style>
